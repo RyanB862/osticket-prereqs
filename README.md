@@ -67,7 +67,7 @@ This makes accessing a computer easy by using remote desktop protocol (RDP) port
 To gain access the public IP address is used along with the VM Admin username and password. 
 
 
-<img width="1909" height="938" alt="Baston Connection " src="https://github.com/user-attachments/assets/52cb0744-3ecf-4042-b9f3-6ac4f9321706" />
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/08f087cb-bbda-4347-a5c7-a757b3a27f7f" />
 The seond option is using Azure's Baston. Baston can deploy a windows VM but typing the VM Admin username and password for access.
 
 
