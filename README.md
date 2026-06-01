@@ -28,15 +28,73 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 
 <h2>Installation Steps</h2>
 
+
 <p>
-<img width="936" height="817" alt="image" src="https://github.com/user-attachments/assets/2e576679-c706-4d61-9436-db195f6d1207" />
+<img width="1920" height="1032" alt="Screenshot 2026-06-01 151736" src="https://github.com/user-attachments/assets/5e5cd95f-a52d-4d2e-b1e0-6a74fbc6661c" />
+
 
 </p>
-<p>
-Here I set up the actual OSTicket VM to house our Active Directory system.
+<p>An Azure region is the location of the datacenter where my VM runs. 
+Here I set up the VM in Azure. I added it to a resource group and gave the VM a name. I also used US East 2 region. Choosing the right region helps with speed, cost, and keeping services available if a problem happens.
 </p>
 <br />
 <p>
+
+<img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/f2f2178f-57ea-4fc9-9cd3-a178430c5546" />
+Here is where I gave the VM a username and password. These are very important as they allow me to successfully login to the VM using port 3389 RDP (Remote Desktop Protocol). Remote Desktop Protocol is important because it allows the helpdesk to remotely access an endpoint without being in person.
+
+
+<img width="1920" height="1032" alt="Screenshot 2026-06-01 151909" src="https://github.com/user-attachments/assets/2d55fe10-f9d0-424f-86c7-ff83d78ce0c6" />
+Here I select the operation system (os) disk size and image. The disk image is important in Azure VM deployment because it acts as the template (operating system + setup) used to quickly create a new virtual machine. A standard HDD is important because it provides a low-cost storage option for the VM’s disk when high performance isn’t required. I then select to delete when VM is deleted. This is to help avoid extra storage charges and 
+keeps the environment clean. I delete the disk with the VM so I don’t pay for something I'm no longer using.
+
+
+<img width="1920" height="1032" alt="Screenshot 2026-06-01 151930" src="https://github.com/user-attachments/assets/18310723-385c-4637-b955-c76831f528ec" />
+Here I select the VNet and subnet so the VM can communicate on the network, assign a public IP for remote access, and choose to delete the public IP and NIC with the VM to avoid leaving unused resources and extra costs. Virtual Network (VNet) is the VM's network. It allows the VM to communicate with other Azure resources and systems, similar to how a home Wi-Fi network connects devices.
+Subnet: This is a smaller section inside the VNet that helps organize and control traffic between resources.
+Public IP Address: This gives the VM an address that can be reached from the internet, allowing remote access such as RDP port 3389.
+Delete Public IP and NIC when VM is deleted: The NIC (Network Interface Card) is the VM's network adapter. Selecting these options ensures that when the VM is deleted, its public IP and network adapter are also removed, preventing unused resources from remaining in Azure and generating unnecessary costs.
+
+
+<img width="1920" height="1032" alt="Screenshot 2026-06-01 152136" src="https://github.com/user-attachments/assets/b6782bba-1995-4e4f-ab3c-d25979f8f698" />
+The Review + Create step is important because it lets me verify all VM settings before deployment, helping prevent configuration mistakes that could affect performance, security, or cost. It also shows the estimated pricing so I can confirm the VM meets the project's requirements and budget before creating it.
+
+
+<h2>Ways To Connect to Windows VM:</h2> 
+<img width="403" height="239" alt="RDP" src="https://github.com/user-attachments/assets/9e983087-37bc-44f0-968c-553baa04b0c4" />
+
+This makes accessing a computer easy by using remote desktop protocol (RDP) port 3389. 
+To gain access the public IP address is used along with the VM Admin username and password. 
+
+
+<img width="1909" height="938" alt="Baston Connection " src="https://github.com/user-attachments/assets/52cb0744-3ecf-4042-b9f3-6ac4f9321706" />
+The seond option is using Azure's Baston. Baston can deploy a windows VM but typing the VM Admin username and password for access.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <p>
 <img width="797" height="302" alt="image" src="https://github.com/user-attachments/assets/f5be735d-b86f-48e4-8d7a-9eac2f1c1738" />
