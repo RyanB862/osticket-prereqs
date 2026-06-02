@@ -68,7 +68,112 @@ To gain access the public IP address is used along with the VM Admin username an
 
 
 <img width="1920" height="1032" alt="image" src="https://github.com/user-attachments/assets/08f087cb-bbda-4347-a5c7-a757b3a27f7f" />
-The seond option is using Azure's Baston. Baston can deploy a windows VM but typing the VM Admin username and password for access.
+The second option is using Azure's Baston. Bastion can deploy a windows VM but typing the VM Admin username and password for access.
+
+<p></p>
+
+<img width="1920" height="1080" alt="OsTicket Download Zip File" src="https://github.com/user-attachments/assets/e3e254ca-3ba0-4f41-ad68-c3b41cbab34b" />
+Once logged into the VM I then download.
+<img width="1920" height="1080" alt="OsTicket Extract File" src="https://github.com/user-attachments/assets/fd12f401-a469-42ac-b8d9-e0a03ca9d2a3" />
+I unzip the OsTicket file. I also put files in this folder to install osTicket and some of the dependencies. 
+
+<img width="1920" height="1032" alt="Screenshot 2026-06-01 170200" src="https://github.com/user-attachments/assets/eca35c9b-6047-43ae-9bca-40d93062c0a7" />
+I then go to the control panel then click windows features on or off on the upper left side of screen.
+
+<img width="1920" height="1032" alt="Screenshot 2026-06-01 170618" src="https://github.com/user-attachments/assets/a2995fd9-fa32-4bce-863e-c0820300654c" />
+I then scroll down to world wide web services. Then click CGI. IIS provides the web server that hosts the osTicket website, while CGI allows IIS to process PHP scripts required by osTicket.
+<img width="1920" height="1080" alt="Screenshot 2026-06-01 170825" src="https://github.com/user-attachments/assets/6162e921-bd26-4f6e-84f5-4b13d7799df9" />
+A search is created to for the files. 
+
+<img width="1599" height="881" alt="image" src="https://github.com/user-attachments/assets/127d499d-16b5-4059-a618-13be483f7b5d" />
+I then click the PHP Manager file. PHP Manager simplifies configuring and managing PHP settings within IIS so osTicket can run properly.
+
+<img width="1587" height="868" alt="image" src="https://github.com/user-attachments/assets/ecb5eb93-7ff9-4049-b3d3-6d24570847f2" />
+I then click the rewrite file and install it. The Rewrite Module allows IIS to handle friendly URLs and web requests used by osTicket.
+<img width="1547" height="880" alt="image" src="https://github.com/user-attachments/assets/45462cb3-5b47-4bdd-af86-ba71819cca44" />
+Heres the install working.
+
+<img width="1611" height="876" alt="image" src="https://github.com/user-attachments/assets/2a505b2a-48c2-427c-81f3-6e35348d1447" />
+I then click on file explorer. 
+<img width="1587" height="880" alt="image" src="https://github.com/user-attachments/assets/d1fd3669-1c18-4abd-95c9-4afa65ec63d1" />
+I then head to C drive to create PHP file. This folder stores the PHP installation files that osTicket relies on to execute PHP code.
+<img width="1592" height="725" alt="image" src="https://github.com/user-attachments/assets/9b6a3e13-32eb-4522-beea-ea8512cc8731" />
+<img width="1583" height="871" alt="image" src="https://github.com/user-attachments/assets/a4044fb9-223b-421a-b6c9-c8255322a7c0" />
+I then extract PHP 7.3.8 into C:\PHP. PHP is the scripting language that runs osTicket's application logic and web pages.
+
+<img width="1597" height="882" alt="image" src="https://github.com/user-attachments/assets/2284faf1-792e-4bee-8273-6cfeca72b82d" />
+<img width="1602" height="883" alt="image" src="https://github.com/user-attachments/assets/4dfcd52d-e0ab-4b02-9c29-5aea821a3467" />
+I then install VC_redist.x86.exe andMySQL 5.5.62. The Visual C++ Redistributable provides required runtime libraries that PHP needs to function correctly.
+MySQL serves as the backend database where osTicket stores tickets, users, departments, and system settings.
+
+<img width="1591" height="879" alt="image" src="https://github.com/user-attachments/assets/c46e6253-2997-4071-8bdb-cb83dbb9b10d" />
+<img width="1593" height="877" alt="image" src="https://github.com/user-attachments/assets/f7ea6b5c-7c3f-4110-951b-aad5eb2a9106" />
+I then configue MySQL Server. Then I configure MySQL with root account.
+Creating the root account establishes administrative access needed to create and manage the osTicket database.
+
+<img width="1598" height="880" alt="image" src="https://github.com/user-attachments/assets/f6e290f6-f0e6-45b2-a2f2-9386aa3a0032" />
+I then click start and open IIS as Administrator. Administrative privileges are required to modify web server settings and register PHP.
+
+<img width="1587" height="874" alt="image" src="https://github.com/user-attachments/assets/3c798970-9c11-4e4a-8ad2-1a8edf056986" />
+<img width="1586" height="873" alt="image" src="https://github.com/user-attachments/assets/b6f7bbee-ca41-427c-91d8-a5e527cf357e" />
+I then register PHP in IIS. Registering php-cgi.exe connects PHP to IIS so PHP files can be processed and displayed in the browser. Then I restart IIS by clicking stop then start.
+Restarting IIS applies the PHP configuration changes and ensures the web server loads them correctly.
+
+<img width="1590" height="877" alt="image" src="https://github.com/user-attachments/assets/dab4a823-8c52-4a55-a415-27b1c51ec658" />
+<img width="1586" height="870" alt="image" src="https://github.com/user-attachments/assets/a195a91d-52aa-40ac-8b5f-0d9a06d9c3df" />
+<img width="1592" height="871" alt="image" src="https://github.com/user-attachments/assets/67a5ee75-a52b-4eef-b6c1-056aad887055" />
+Then I install osTicket files by extract all. Copying the osTicket files places the application on the web server so it can be accessed by users.
+Then I rename the upload folder to osTicket. Renaming the upload folder creates a cleaner and more recognizable URL for accessing the helpdesk.
+Then I copy the upload folder into c:\inetpub\wwwroot. Within c:\inetpub\wwwroot, Rename upload file to osTicket.
+
+<img width="1597" height="874" alt="image" src="https://github.com/user-attachments/assets/2d5ffd55-69b1-431c-a379-e26af4cecce2" />
+Restart IIS again by clicking osticket vm in IIS (stop then start). Restarting IIS ensures the newly added osTicket application is recognized by the web server
+
+<img width="1583" height="871" alt="image" src="https://github.com/user-attachments/assets/016c1959-bf43-4384-b0fd-64974c0ea7e9" />
+While inside IIS I then go to sites then default website then osTicket. Navigate to the right then click Browse :80.
+
+<img width="1587" height="876" alt="image" src="https://github.com/user-attachments/assets/99333029-416c-4344-85d9-b77730ad979b" />
+Now see the osTicket site. Opening the site verifies that the web server and osTicket files are configured correctly.
+
+<img width="1654" height="889" alt="image" src="https://github.com/user-attachments/assets/2a181fad-58bd-4921-8088-d1e7f417436c" />
+<img width="1653" height="887" alt="image" src="https://github.com/user-attachments/assets/ceec861e-9c2f-4b4c-a32e-fbf47cf2e134" />
+<img width="1660" height="884" alt="image" src="https://github.com/user-attachments/assets/1d3bd933-71e8-4d5e-84fb-ca9ee56c9a02" />
+Back to IIS I click sites then default then osTicket. By double-click PHP Manager then Click “Enable or disable an extension”.
+I then enable php_imap.dllEnable, php_intl.dllEnable, php_opcache.dll. IMAP support allows osTicket to retrieve and convert incoming emails into support tickets.
+By enable php_intl.dll the Internationalization extension improves language, date, and character handling within osTicket.
+Enable php_opcache.dll OPcache improves performance by caching PHP scripts and reducing processing time.
+Refresh the osTicket site in your browser and observe the changes. Refreshing confirms the required PHP extensions are successfully enabled and functioning.
+
+<img width="1659" height="890" alt="image" src="https://github.com/user-attachments/assets/a45a228c-204e-4abd-a89f-1eaa6d979eb3" />
+ Go to File explorer and click C drive then to inetpub then wwwroot to osTicket to include and rename sampleconfig.php to config.php
+This creates the active configuration file where osTicket stores its system settings.
+
+<img width="1654" height="882" alt="image" src="https://github.com/user-attachments/assets/87228e8e-d484-4fca-8335-65feb2cc6e81" />
+Then assign permissions to ost-config.php. Right click ost-config.php file then select properites then click security tab then click advanced
+
+<img width="1656" height="889" alt="image" src="https://github.com/user-attachments/assets/06465ca6-7b15-4d69-8734-927d372aed83" />
+<img width="1653" height="883" alt="image" src="https://github.com/user-attachments/assets/99b2b6a6-6114-4f6c-a19d-e0021cd5a852" />
+Click disable inheritance then Remove All. Removing inheritance strengthens security by limiting who can access the configuration file.  
+
+<img width="1662" height="881" alt="image" src="https://github.com/user-attachments/assets/5d2ece10-c26e-417f-ad27-93b0ef0cc40e" />
+<img width="844" height="546" alt="image" src="https://github.com/user-attachments/assets/836c7f4c-adc3-4b91-9833-4ca64239bf75" />
+Then add new permissions everyone to all in ost-config.php. Click Add then select principle then type Everyone. Click ok then click full control then click apply.
+This gives temporary permissions to allow the web installer to write configuration settings during setup.
+
+<img width="966" height="814" alt="image" src="https://github.com/user-attachments/assets/d5f6dba6-997a-42b7-99d3-150512454382" />
+Continue setting up the osTicket in the browser and click Continue.
+Configure Helpdesk Name and Email.	This establishes the helpdesk identity and defines where customer communications are received.
+Then web installer guides the final configuration of the helpdesk environment.
+
+<img width="809" height="816" alt="image" src="https://github.com/user-attachments/assets/63937439-3a09-4fb6-8111-5666404d6ae9" />
+<img width="552" height="427" alt="image" src="https://github.com/user-attachments/assets/f759c3d9-034e-46d9-bd85-188603dece93" />
+Then go to file “osTicket-Installation-Files” folder and install HeidiSQL.
+Open Heidi SQL
+
+<img width="635" height="431" alt="image" src="https://github.com/user-attachments/assets/c8e0b5d9-9a66-4345-a3d3-78ccda5b4787" />
+Click a new session and type  password and username
+Connect to the session
+Create a database called “osTicket”
 
 
 
@@ -91,58 +196,3 @@ The seond option is using Azure's Baston. Baston can deploy a windows VM but typ
 
 
 
-
-
-
-
-
-<p>
-<img width="797" height="302" alt="image" src="https://github.com/user-attachments/assets/f5be735d-b86f-48e4-8d7a-9eac2f1c1738" />
-</p>
-<p>
-Here I downloaded and extracted all the necessary dependencies from the provided ticket installation files.
-</p>
-<br />
-
-</p>
-<img width="615" height="414" alt="image" src="https://github.com/user-attachments/assets/eca2d548-1c45-4afe-81f0-13db31d84830" />
-
-<img width="493" height="381" alt="image" src="https://github.com/user-attachments/assets/843172ee-848e-48c9-a99f-3df1e9b4a2f3" />
-
-<p>
-Here, I enabled IIS Windows features within the Virtual Machine along with installing CGI.
-</p>
-<br />
-
-<p>
-<img width="680" height="338" alt="image" src="https://github.com/user-attachments/assets/deae84a6-fcf1-4368-937d-1996f0354e2d" />
-
-
-</p>
-<p>
-Here I installed and setup PHP directory along with the necessary rewrite module
-</p>
-<br />
-
-
-<p>
-<img width="679" height="335" alt="image" src="https://github.com/user-attachments/assets/f1fcb5ca-02f7-4ab8-955f-25492ee168e0" />
-
-<img width="560" height="357" alt="image" src="https://github.com/user-attachments/assets/ce130f76-cbfb-407c-a6f2-ebbc12349c9c" />
-
-
-</p>
-<p>
-Here I installed MySQL and set up user credentials and C++redistributable 
-</p>
-<br />
-<p>
-
-<img width="717" height="558" alt="image" src="https://github.com/user-attachments/assets/04c5e16d-0c5a-4611-8081-a156b14f1c8d" />
-
-
-</p>
-<p>
-Here we finally installed the OSticket platform on the VM within Microsoft Azure
-</p>
-<br />
