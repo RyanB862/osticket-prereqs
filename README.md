@@ -167,18 +167,33 @@ Then web installer guides the final configuration of the helpdesk environment.
 
 <img width="809" height="816" alt="image" src="https://github.com/user-attachments/assets/63937439-3a09-4fb6-8111-5666404d6ae9" />
 <img width="552" height="427" alt="image" src="https://github.com/user-attachments/assets/f759c3d9-034e-46d9-bd85-188603dece93" />
+
 Then go to file “osTicket-Installation-Files” folder and install HeidiSQL.
-Open Heidi SQL
+Open Heidi SQL.
+HeidiSQL provides a graphical interface for managing the MySQL database used by osTicket.
 
 <img width="635" height="431" alt="image" src="https://github.com/user-attachments/assets/c8e0b5d9-9a66-4345-a3d3-78ccda5b4787" />
-Click a new session and type  password and username
+
+Click a new session and type admin username and password
+This creates a root/root database session.	Connecting with administrative credentials allows database creation and management tasks.
 Connect to the session
-Create a database called “osTicket”
 
+<img width="446" height="559" alt="image" src="https://github.com/user-attachments/assets/691a04f4-2f73-41f0-890d-343afc803eb1" />
 
+Create a database called “osTicket”. Right click unnamed then select create new then database. 
+Then type “osTicket”.
+Then create a osTicket database.	The database provides a dedicated location for storing all helpdesk data and records.
 
+<img width="795" height="445" alt="image" src="https://github.com/user-attachments/assets/6c770608-50a9-45be-9cd9-230ec8898e43" />
+<img width="761" height="587" alt="image" src="https://github.com/user-attachments/assets/c962be2b-0f21-42c2-a883-aacfadf66906" />
 
+Continue Setting up osTicket in the browser
+Type MySQL Username and Password: root
+Click “Install Now!”
 
+<img width="638" height="485" alt="image" src="https://github.com/user-attachments/assets/1747fcd8-3747-4385-994e-53a9c22199e1" />
+
+Then log in to OsTicket using admin username and password
 
 
 
